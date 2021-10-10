@@ -115,5 +115,16 @@
             (show Edges Diagonal Hidden)
         }
     )
+    (ai
+        (heuristics {
+            (material transformation:(divNumInitPlacement) pieceWeights:{
+                (pair "Town1" 1000.0)
+                (pair "Town2" 1000.0)
+                (pair "Marker1" 10.0)
+                (pair "Marker2" 10.0
+            })
+        })
+        )
+    )
 )
 

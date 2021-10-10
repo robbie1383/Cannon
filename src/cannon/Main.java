@@ -18,10 +18,8 @@ public class Main
      */
     public static void main(final String[] args)
     {
-        // Register our example AIs
-        AIRegistry.registerAI("Example Random AI", () -> {return new RandomAI();}, (game) -> {return true;});
+        AIRegistry.registerAI("Alpha-beta AI", () -> {return new AlphaBetaAI();}, (game) -> {return true;});
 
-        // Run Ludii
         StartDesktopApp.main(new String[0]);
     }
 
