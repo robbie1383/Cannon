@@ -1,13 +1,9 @@
 package cannon;
 
-import java.util.List;
-import java.util.concurrent.ThreadLocalRandom;
-
 import game.Game;
 import main.collections.FastArrayList;
 import metadata.ai.heuristics.Heuristics;
 import other.AI;
-import other.action.Action;
 import other.context.Context;
 import other.move.Move;
 import utils.AIUtils;
