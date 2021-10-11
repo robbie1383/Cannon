@@ -1,14 +1,14 @@
 {
     "ShowEndingMove": true,
     "Names_2": "Player 2",
-    "MenuNames_16": "Human",
+    "MenuNames_16": "Alpha-beta AI",
     "Names_1": "Player 1",
-    "MenuNames_15": "Human",
+    "MenuNames_15": "Alpha-beta AI",
     "Names_16": "Player 16",
     "Names_0": "Player 0",
-    "MenuNames_14": "Human",
+    "MenuNames_14": "Alpha-beta AI",
     "ShowCoordinates": false,
-    "MenuNames_13": "Human",
+    "MenuNames_13": "Alpha-beta AI",
     "Names_6": "Player 6",
     "Names_13": "Player 13",
     "Names_5": "Player 5",
@@ -22,10 +22,10 @@
     "drawInnerEdges": false,
     "Names_11": "Player 11",
     "Names_10": "Player 10",
-    "MenuNames_12": "Human",
+    "MenuNames_12": "Alpha-beta AI",
     "drawInnerCells": false,
-    "MenuNames_11": "Human",
-    "MenuNames_10": "Human",
+    "MenuNames_11": "Alpha-beta AI",
+    "MenuNames_10": "Alpha-beta AI",
     "MoveCoord": true,
     "drawOuterEdges": false,
     "PhaseTitle": false,
@@ -34,16 +34,60 @@
     "drawCornerConvexEdges": false,
     "drawPhasesVertices": false,
     "drawHorizontalEdges": false,
+    "SearchTime_8": 1,
+    "AI_10": {
+        "AI": {"algorithm": "Alpha-beta AI"},
+        "constructor": "cannon.Main$$Lambda$15/0x0000000800ba4c40@2ee08114"
+    },
+    "SearchTime_9": 1,
+    "AI_11": {
+        "AI": {"algorithm": "Alpha-beta AI"},
+        "constructor": "cannon.Main$$Lambda$15/0x0000000800ba4c40@2ee08114"
+    },
     "drawCornerConvexCells": false,
-    "LoadedFromMemory": false,
-    "SearchTime_1": 1,
+    "Show Track Track1B": false,
+    "SearchTime_6": 1,
+    "SearchTime_7": 1,
+    "LoadedFromMemory": true,
+    "SearchTime_4": 1,
+    "SearchTime_5": 1,
+    "SearchTime_2": 10,
+    "SearchTime_3": 1,
+    "SearchTime_15": 1,
+    "SearchTime_1": 10,
+    "SearchTime_16": 1,
     "CursorTooltip": false,
     "drawOuterCells": false,
+    "SearchTime_13": 1,
+    "AI_16": {
+        "AI": {"algorithm": "Alpha-beta AI"},
+        "constructor": "cannon.Main$$Lambda$15/0x0000000800ba4c40@2ee08114"
+    },
     "NoRepetition": false,
+    "SearchTime_14": 1,
     "drawCenterCells": false,
+    "SearchTime_11": 1,
+    "AI_14": {
+        "AI": {"algorithm": "Alpha-beta AI"},
+        "constructor": "cannon.Main$$Lambda$15/0x0000000800ba4c40@2ee08114"
+    },
+    "SearchTime_12": 1,
+    "AI_15": {
+        "AI": {"algorithm": "Alpha-beta AI"},
+        "constructor": "cannon.Main$$Lambda$15/0x0000000800ba4c40@2ee08114"
+    },
     "ShowConnections": false,
+    "Show Track Track1F": false,
+    "AI_12": {
+        "AI": {"algorithm": "Alpha-beta AI"},
+        "constructor": "cannon.Main$$Lambda$15/0x0000000800ba4c40@2ee08114"
+    },
+    "SearchTime_10": 1,
+    "AI_13": {
+        "AI": {"algorithm": "Alpha-beta AI"},
+        "constructor": "cannon.Main$$Lambda$15/0x0000000800ba4c40@2ee08114"
+    },
     "drawMajorVertices": false,
-    "SavedLudLastModifiedTime": "2021-10-10T14:09:00.69998Z",
     "drawCornerConvexVertices": false,
     "drawNeighboursVertices": false,
     "Names_9": "Player 9",
@@ -53,6 +97,7 @@
     "drawBottomVertices": false,
     "drawBottomCells": false,
     "ShowFaceCoordinates": false,
+    "RecentGames_2": "C:\\Users\\rober\\Desktop\\UM\\Intelligent Search and Games\\Cannon\\Cannon\\Cannon.lud",
     "RecentGames_1": "Surakarta",
     "FrameWidth": 1440,
     "drawSlashEdges": false,
@@ -60,7 +105,7 @@
     "OptionStrings": [],
     "drawLeftEdges": false,
     "drawAngledEdges": false,
-    "RecentGames_0": "C:\\Users\\rober\\Desktop\\UM\\Intelligent Search and Games\\Cannon\\Cannon\\Cannon.lud",
+    "RecentGames_0": "Chess",
     "drawDistanceCells": false,
     "drawPerimeterVertices": false,
     "drawBottomEdges": false,
@@ -73,13 +118,13 @@
     "drawRadialsVertices": false,
     "VersionNumber": "1.2.10",
     "editorAutocomplete": true,
-    "MenuNames_6": "Human",
-    "MenuNames_7": "Human",
-    "MenuNames_8": "Human",
+    "MenuNames_6": "Alpha-beta AI",
+    "MenuNames_7": "Alpha-beta AI",
+    "MenuNames_8": "Alpha-beta AI",
     "ShowRepetitions": false,
     "drawCenterVertices": false,
-    "MenuNames_9": "Human",
-    "savedLudName": "C:\\Users\\rober\\Desktop\\UM\\Intelligent Search and Games\\Cannon\\Cannon\\Cannon.lud",
+    "MenuNames_9": "Alpha-beta AI",
+    "savedLudName": "/lud/board/war/replacement/checkmate/chess/Chess.lud",
     "FlatBoard": false,
     "ShowFaceIndices": false,
     "coordWithOutline": false,
@@ -92,12 +137,12 @@
     "MenuNames_0": "Human",
     "MenuNames_1": "Alpha-beta AI",
     "testLudeme2": "",
-    "MenuNames_2": "Human",
+    "MenuNames_2": "Alpha-beta AI",
     "testLudeme3": "",
-    "MenuNames_3": "Human",
-    "MenuNames_4": "Human",
+    "MenuNames_3": "Alpha-beta AI",
+    "MenuNames_4": "Alpha-beta AI",
     "testLudeme1": "",
-    "MenuNames_5": "Human",
+    "MenuNames_5": "Alpha-beta AI",
     "SwapRule": false,
     "drawNeighboursCells": false,
     "drawTopVertices": false,
@@ -121,11 +166,33 @@
     "drawRightEdges": false,
     "drawMinorCells": false,
     "ShowPossibleMoves": true,
+    "AI_5": {
+        "AI": {"algorithm": "Alpha-beta AI"},
+        "constructor": "cannon.Main$$Lambda$15/0x0000000800ba4c40@2ee08114"
+    },
     "ShowContainerIndices": false,
     "drawPerimeterCells": false,
+    "Show Track Track2F": false,
+    "AI_6": {
+        "AI": {"algorithm": "Alpha-beta AI"},
+        "constructor": "cannon.Main$$Lambda$15/0x0000000800ba4c40@2ee08114"
+    },
+    "AI_3": {
+        "AI": {"algorithm": "Alpha-beta AI"},
+        "constructor": "cannon.Main$$Lambda$15/0x0000000800ba4c40@2ee08114"
+    },
+    "AI_4": {
+        "AI": {"algorithm": "Alpha-beta AI"},
+        "constructor": "cannon.Main$$Lambda$15/0x0000000800ba4c40@2ee08114"
+    },
     "AI_1": {
         "AI": {"algorithm": "Alpha-beta AI"},
-        "constructor": "cannon.Main$$Lambda$15/0x0000000800ba4c40@44e8883f"
+        "constructor": "cannon.Main$$Lambda$15/0x0000000800ba4c40@2ee08114"
+    },
+    "Show Track Track2B": false,
+    "AI_2": {
+        "AI": {"algorithm": "Alpha-beta AI"},
+        "constructor": "cannon.Main$$Lambda$15/0x0000000800ba4c40@2ee08114"
     },
     "ShowLastMove": false,
     "NoRepetitionWithinTurn": false,
@@ -150,11 +217,23 @@
     "FrameLocY": 131,
     "networkRefresh": false,
     "startButtonPausesAI": true,
-    "TickLength": 0.1,
+    "TickLength": 0.5,
     "drawSideNumberVertices": 0,
     "drawLeftVertices": false,
     "drawVerticalEdges": false,
     "drawTopCells": false,
     "drawCornerConcaveCells": false,
-    "drawPhasesCells": false
+    "AI_9": {
+        "AI": {"algorithm": "Alpha-beta AI"},
+        "constructor": "cannon.Main$$Lambda$15/0x0000000800ba4c40@2ee08114"
+    },
+    "drawPhasesCells": false,
+    "AI_7": {
+        "AI": {"algorithm": "Alpha-beta AI"},
+        "constructor": "cannon.Main$$Lambda$15/0x0000000800ba4c40@2ee08114"
+    },
+    "AI_8": {
+        "AI": {"algorithm": "Alpha-beta AI"},
+        "constructor": "cannon.Main$$Lambda$15/0x0000000800ba4c40@2ee08114"
+    }
 }

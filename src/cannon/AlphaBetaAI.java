@@ -34,7 +34,8 @@ public class AlphaBetaAI extends AI
 
             )
     {
-        return this.NegaMax(game, context, maxDepth, -Double.POSITIVE_INFINITY, Double.POSITIVE_INFINITY).getMove();
+
+        return this.NegaMax(game, context, 5, Double.NEGATIVE_INFINITY, Double.POSITIVE_INFINITY, player).getMove();
     }
 
     @Override
@@ -45,26 +46,36 @@ public class AlphaBetaAI extends AI
         this.heuristics.init(game);
     }
 
-    public MoveValue NegaMax(Game game, Context state, int depth, double alpha, double beta) {
+    public MoveValue NegaMax(Game game, Context state, int depth, double alpha, double beta, int player) {
+        System.out.println("depth : " + depth);
         Move bestMove = null;
-        if(depth == 0 || !state.active(player))
-            return new MoveValue(null, (double) heuristics.computeValue(state, player, -100.f));
-        double score = -Double.POSITIVE_INFINITY;
+        if(depth == 0 || !state.active(player)) {
+            System.out.println("heuristic : " + heuristics.computeValue(state, player, Float.valueOf(0.001f)));
+            return new MoveValue(null, (double) heuristics.computeValue(state, player, Float.valueOf(0.001f)));
+        }
+        double score = Double.NEGATIVE_INFINITY;
         FastArrayList<Move>  legalMoves = AIUtils.extractMovesForMover(game.moves(state).moves(), player);
+        System.out.println("possible moves :" + legalMoves.size());
         for (Move move : legalMoves) {
             Context copyState = copyContext(state);
             game.apply(copyState, move);
-            double value = -this.NegaMax(game, copyState, depth - 1, -beta, -alpha).getScore();
+            double value = -this.NegaMax(game, copyState, depth - 1, -beta, -alpha, this.switchPlayer(player)).getScore();
             if (value > score) {
                 score = value;
                 bestMove = move;
             }
+            System.out.println("score : " + score);
             if (score > alpha) alpha = score;
             if (score >= beta)
                 break;
         }
-
+        System.out.println("best score : " + score);
         return new MoveValue(bestMove, score);
     }
 
+    private int switchPlayer(int player) {
+        if (player == 1)
+            return 2;
+        return 1;
+    }
 }
