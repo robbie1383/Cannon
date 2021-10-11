@@ -43,7 +43,7 @@
     "drawCenterCells": false,
     "ShowConnections": false,
     "drawMajorVertices": false,
-    "SavedLudLastModifiedTime": "2021-10-10T11:05:23.38451Z",
+    "SavedLudLastModifiedTime": "2021-10-10T14:09:00.69998Z",
     "drawCornerConvexVertices": false,
     "drawNeighboursVertices": false,
     "Names_9": "Player 9",
@@ -125,7 +125,7 @@
     "drawPerimeterCells": false,
     "AI_1": {
         "AI": {"algorithm": "Alpha-beta AI"},
-        "constructor": "cannon.Main$$Lambda$15/0x0000000800ba4c40@6a80ca80"
+        "constructor": "cannon.Main$$Lambda$15/0x0000000800ba4c40@44e8883f"
     },
     "ShowLastMove": false,
     "NoRepetitionWithinTurn": false,
@@ -145,9 +145,9 @@
     "tabFontSize": 13,
     "ShowCellIndices": false,
     "drawPerimeterEdges": false,
-    "FrameLocX": 292,
+    "FrameLocX": 301,
     "AnimationVisualsType": "None",
-    "FrameLocY": 217,
+    "FrameLocY": 131,
     "networkRefresh": false,
     "startButtonPausesAI": true,
     "TickLength": 0.1,
