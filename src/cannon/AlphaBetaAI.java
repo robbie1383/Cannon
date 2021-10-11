@@ -49,8 +49,8 @@ public class AlphaBetaAI extends AI
     public MoveValue NegaMax(Game game, Context state, int depth, double alpha, double beta, int player) {
         System.out.println("depth : " + depth);
         Move bestMove = null;
-        if(depth == 0 || !state.active(player)) {
-            System.out.println("heuristic : " + heuristics.computeValue(state, player, Float.valueOf(0.001f)));
+        if(depth == 0 || !state.active(player) || !state.active(switchPlayer(player))) {
+            System.out.println("heuristic : " + (double) heuristics.computeValue(state, player, Float.valueOf(0.001f)));
             return new MoveValue(null, (double) heuristics.computeValue(state, player, Float.valueOf(0.001f)));
         }
         double score = Double.NEGATIVE_INFINITY;

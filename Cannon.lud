@@ -116,12 +116,13 @@
         }
     )
     (ai
+        (bestAgent "Alpha-Beta")
         (heuristics {
             (material transformation:(divNumInitPlacement) pieceWeights:{
-                (pair "Town1" 1000.0)
-                (pair "Town2" 1000.0)
-                (pair "Marker1" 10.0)
-                (pair "Marker2" 10.0
+                (pair "Town1" 100.0)
+                (pair "Town2" 100.0)
+                (pair "Marker1" 1.0)
+                (pair "Marker2" 1.0)
             })
         })
         )
