@@ -42,14 +42,14 @@
 )
 
 (define "ShootCannon"
-    (forEach Direction All
+    (forEach Direction
         (if (and ("IsCannon") (is Empty (("AheadSite" steps:3))))
             (if (is Enemy (who at:("AheadSite" steps:4)))
                 (move Remove ("AheadSite" steps:4))
             )
         )
     )
-   (forEach Direction All
+   (forEach Direction
         (if (and ("IsCannon") (is Empty (("AheadSite" steps:4))))
             (if (is Enemy (who at:("AheadSite" steps:5)))
                 (move Remove ("AheadSite" steps:5))
@@ -121,9 +121,11 @@
             (material transformation:(divNumInitPlacement) pieceWeights:{
                 (pair "Town1" 100.0)
                 (pair "Town2" 100.0)
-                (pair "Marker1" 1.0)
-                (pair "Marker2" 1.0)
+                (pair "Marker1" 10.0)
+                (pair "Marker2" 10.0)
             })
+            (lineCompletionHeuristic targetLength:3)
+            (mobilitySimple weight:0.5)
         })
         )
     )

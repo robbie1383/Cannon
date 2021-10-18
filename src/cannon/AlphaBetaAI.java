@@ -8,11 +8,14 @@ import other.context.Context;
 import other.move.Move;
 import utils.AIUtils;
 
+import java.util.ArrayList;
+
 public class AlphaBetaAI extends AI
 {
-
+    int time = 600000;
     protected int player = -1;
     Heuristics heuristics;
+    TranspositionTableEntry[] transpositionTable = new TranspositionTableEntry[1 << 12];
 
     public AlphaBetaAI()
     {
@@ -30,8 +33,12 @@ public class AlphaBetaAI extends AI
 
             )
     {
-
-        return this.NegaMax(game, context, 5, Double.NEGATIVE_INFINITY, Double.POSITIVE_INFINITY, player).getMove();
+        long start = System.currentTimeMillis();
+        Move move = this.NegaMax(game, context, 4, Double.NEGATIVE_INFINITY, Double.POSITIVE_INFINITY, player).getMove();
+        long end = System.currentTimeMillis();
+        time -= (end - start);
+        System.out.println("Time left : " + time + " for player "+ this.player);
+        return move;
     }
 
     @Override
@@ -43,15 +50,33 @@ public class AlphaBetaAI extends AI
     }
 
     public MoveValue NegaMax(Game game, Context state, int depth, double alpha, double beta, int player) {
-        System.out.println("depth : " + depth);
-        Move bestMove = null;
-        if(depth == 0 || !state.active(player) || !state.active(switchPlayer(player))) {
-            System.out.println("heuristic : " + (double) heuristics.computeValue(state, player, Float.valueOf(0.001f)));
-            return new MoveValue(null, (double) heuristics.computeValue(state, player, Float.valueOf(0.001f)));
+
+        // Lookup transposition table
+        double oldAlpha = alpha;
+        TranspositionTableEntry entry = this.lookUp(state);
+        if (entry != null && entry.depth <= depth) {
+            if (entry.flag.equals("exact")) return new MoveValue(entry.bestMove, entry.value);
+            if (entry.flag.equals("upper")) beta = Math.min(beta, entry.value);
+            if (entry.flag.equals("lower")) alpha = Math.max(alpha, entry.value);
+            if (alpha >= beta)
+                return new MoveValue(entry.bestMove, entry.value);
         }
+
+        // Start alpha-beta
+        // If leaf node
+        if(depth == 0 || !state.active(player) || !state.active(switchPlayer(player))) {
+            double heuristic = (double) (heuristics.computeValue(state, player, Float.valueOf(0.01f)) - heuristics.computeValue(state, this.switchPlayer(player), Float.valueOf(0.01f)));
+            if (!state.active(switchPlayer(player)) && state.winners().contains(switchPlayer(player)))
+                heuristic -= 10000.f;
+
+            return new MoveValue(null, heuristic);
+        }
+
+        // If internal node
         double score = Double.NEGATIVE_INFINITY;
         FastArrayList<Move>  legalMoves = AIUtils.extractMovesForMover(game.moves(state).moves(), player);
-        System.out.println("possible moves :" + legalMoves.size());
+        Move bestMove = legalMoves.get(0);
+
         for (Move move : legalMoves) {
             Context copyState = copyContext(state);
             game.apply(copyState, move);
@@ -60,13 +85,40 @@ public class AlphaBetaAI extends AI
                 score = value;
                 bestMove = move;
             }
-            System.out.println("score : " + score);
             if (score > alpha) alpha = score;
-            if (score >= beta)
+            if (alpha >= beta)
                 break;
         }
-        System.out.println("best score : " + score);
+
+        // Store node in transposition table
+        String flag;
+        if (score <= oldAlpha) flag = "upper";
+        else if (score >= beta) flag = "lower";
+        else flag = "exact";
+
+        //if (entry == null)
+            this.addToTT(state, new TranspositionTableEntry(score, flag, bestMove, depth, state.state().fullHash()));
+
+        //if (entry != null && entry.depth > depth) {
+          //  this.addToTT(state, new TranspositionTableEntry(score, flag, bestMove, depth, state.state().fullHash()));
+        //}
+
         return new MoveValue(bestMove, score);
+    }
+
+    private TranspositionTableEntry lookUp(Context context) {
+
+        int i = (int) (context.state().fullHash() >>> (Long.SIZE - 12));
+        if (this.transpositionTable[i] != null && this.transpositionTable[i].id == context.state().fullHash())
+            return this.transpositionTable[i];
+        return null;
+
+    }
+
+    private void addToTT(Context context, TranspositionTableEntry t){
+
+        int i = (int) (context.state().fullHash() >>> (Long.SIZE - 12));
+        this.transpositionTable[i] = t;
     }
 
     private int switchPlayer(int player) {

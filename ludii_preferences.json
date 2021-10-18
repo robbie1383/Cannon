@@ -1,14 +1,14 @@
 {
     "ShowEndingMove": true,
     "Names_2": "Player 2",
-    "MenuNames_16": "Alpha-beta AI",
+    "MenuNames_16": "Human",
     "Names_1": "Player 1",
-    "MenuNames_15": "Alpha-beta AI",
+    "MenuNames_15": "Human",
     "Names_16": "Player 16",
     "Names_0": "Player 0",
-    "MenuNames_14": "Alpha-beta AI",
+    "MenuNames_14": "Human",
     "ShowCoordinates": false,
-    "MenuNames_13": "Alpha-beta AI",
+    "MenuNames_13": "Human",
     "Names_6": "Player 6",
     "Names_13": "Player 13",
     "Names_5": "Player 5",
@@ -22,10 +22,10 @@
     "drawInnerEdges": false,
     "Names_11": "Player 11",
     "Names_10": "Player 10",
-    "MenuNames_12": "Alpha-beta AI",
+    "MenuNames_12": "Human",
     "drawInnerCells": false,
-    "MenuNames_11": "Alpha-beta AI",
-    "MenuNames_10": "Alpha-beta AI",
+    "MenuNames_11": "Human",
+    "MenuNames_10": "Human",
     "MoveCoord": true,
     "drawOuterEdges": false,
     "PhaseTitle": false,
@@ -34,59 +34,16 @@
     "drawCornerConvexEdges": false,
     "drawPhasesVertices": false,
     "drawHorizontalEdges": false,
-    "SearchTime_8": 1,
-    "AI_10": {
-        "AI": {"algorithm": "Alpha-beta AI"},
-        "constructor": "cannon.Main$$Lambda$15/0x0000000800ba4c40@4067c6f"
-    },
-    "SearchTime_9": 1,
-    "AI_11": {
-        "AI": {"algorithm": "Alpha-beta AI"},
-        "constructor": "cannon.Main$$Lambda$15/0x0000000800ba4c40@4067c6f"
-    },
     "drawCornerConvexCells": false,
-    "SearchTime_6": 1,
-    "SearchTime_7": 1,
     "LoadedFromMemory": false,
-    "SearchTime_4": 1,
-    "SearchTime_5": 1,
-    "SearchTime_2": 10,
-    "SearchTime_3": 1,
-    "SearchTime_15": 1,
-    "SearchTime_1": 10,
-    "SearchTime_16": 1,
+    "SearchTime_2": 1,
     "CursorTooltip": false,
     "drawOuterCells": false,
-    "SearchTime_13": 1,
-    "AI_16": {
-        "AI": {"algorithm": "Alpha-beta AI"},
-        "constructor": "cannon.Main$$Lambda$15/0x0000000800ba4c40@4067c6f"
-    },
     "NoRepetition": false,
-    "SearchTime_14": 1,
     "drawCenterCells": false,
-    "SearchTime_11": 1,
-    "AI_14": {
-        "AI": {"algorithm": "Alpha-beta AI"},
-        "constructor": "cannon.Main$$Lambda$15/0x0000000800ba4c40@4067c6f"
-    },
-    "SearchTime_12": 1,
-    "AI_15": {
-        "AI": {"algorithm": "Alpha-beta AI"},
-        "constructor": "cannon.Main$$Lambda$15/0x0000000800ba4c40@4067c6f"
-    },
     "ShowConnections": false,
-    "AI_12": {
-        "AI": {"algorithm": "Alpha-beta AI"},
-        "constructor": "cannon.Main$$Lambda$15/0x0000000800ba4c40@4067c6f"
-    },
-    "SearchTime_10": 1,
-    "AI_13": {
-        "AI": {"algorithm": "Alpha-beta AI"},
-        "constructor": "cannon.Main$$Lambda$15/0x0000000800ba4c40@4067c6f"
-    },
     "drawMajorVertices": false,
-    "SavedLudLastModifiedTime": "2021-10-11T13:18:58.742872Z",
+    "SavedLudLastModifiedTime": "2021-10-15T16:10:19.495906Z",
     "drawCornerConvexVertices": false,
     "drawNeighboursVertices": false,
     "Names_9": "Player 9",
@@ -96,8 +53,7 @@
     "drawBottomVertices": false,
     "drawBottomCells": false,
     "ShowFaceCoordinates": false,
-    "RecentGames_2": "Surakarta",
-    "RecentGames_1": "Chess",
+    "RecentGames_1": "Surakarta",
     "FrameWidth": 1440,
     "drawSlashEdges": false,
     "drawCornersCells": false,
@@ -117,12 +73,12 @@
     "drawRadialsVertices": false,
     "VersionNumber": "1.2.10",
     "editorAutocomplete": true,
-    "MenuNames_6": "Alpha-beta AI",
-    "MenuNames_7": "Alpha-beta AI",
-    "MenuNames_8": "Alpha-beta AI",
+    "MenuNames_6": "Human",
+    "MenuNames_7": "Human",
+    "MenuNames_8": "Human",
     "ShowRepetitions": false,
     "drawCenterVertices": false,
-    "MenuNames_9": "Alpha-beta AI",
+    "MenuNames_9": "Human",
     "savedLudName": "C:\\Users\\rober\\Desktop\\UM\\Intelligent Search and Games\\Cannon\\Cannon\\Cannon.lud",
     "FlatBoard": false,
     "ShowFaceIndices": false,
@@ -134,14 +90,14 @@
     "drawRightVertices": false,
     "drawCentreEdges": false,
     "MenuNames_0": "Human",
-    "MenuNames_1": "Alpha-beta AI",
+    "MenuNames_1": "Human",
     "testLudeme2": "",
     "MenuNames_2": "Alpha-beta AI",
     "testLudeme3": "",
-    "MenuNames_3": "Alpha-beta AI",
-    "MenuNames_4": "Alpha-beta AI",
+    "MenuNames_3": "Human",
+    "MenuNames_4": "Human",
     "testLudeme1": "",
-    "MenuNames_5": "Alpha-beta AI",
+    "MenuNames_5": "Human",
     "SwapRule": false,
     "drawNeighboursCells": false,
     "drawTopVertices": false,
@@ -165,31 +121,11 @@
     "drawRightEdges": false,
     "drawMinorCells": false,
     "ShowPossibleMoves": true,
-    "AI_5": {
-        "AI": {"algorithm": "Alpha-beta AI"},
-        "constructor": "cannon.Main$$Lambda$15/0x0000000800ba4c40@4067c6f"
-    },
     "ShowContainerIndices": false,
     "drawPerimeterCells": false,
-    "AI_6": {
-        "AI": {"algorithm": "Alpha-beta AI"},
-        "constructor": "cannon.Main$$Lambda$15/0x0000000800ba4c40@4067c6f"
-    },
-    "AI_3": {
-        "AI": {"algorithm": "Alpha-beta AI"},
-        "constructor": "cannon.Main$$Lambda$15/0x0000000800ba4c40@4067c6f"
-    },
-    "AI_4": {
-        "AI": {"algorithm": "Alpha-beta AI"},
-        "constructor": "cannon.Main$$Lambda$15/0x0000000800ba4c40@4067c6f"
-    },
-    "AI_1": {
-        "AI": {"algorithm": "Alpha-beta AI"},
-        "constructor": "cannon.Main$$Lambda$15/0x0000000800ba4c40@4067c6f"
-    },
     "AI_2": {
         "AI": {"algorithm": "Alpha-beta AI"},
-        "constructor": "cannon.Main$$Lambda$15/0x0000000800ba4c40@4067c6f"
+        "constructor": "cannon.Main$$Lambda$15/0x0000000800ba4c40@6e62a06d"
     },
     "ShowLastMove": true,
     "NoRepetitionWithinTurn": false,
@@ -209,28 +145,16 @@
     "tabFontSize": 13,
     "ShowCellIndices": false,
     "drawPerimeterEdges": false,
-    "FrameLocX": 301,
+    "FrameLocX": 138,
     "AnimationVisualsType": "None",
-    "FrameLocY": 131,
+    "FrameLocY": 28,
     "networkRefresh": false,
     "startButtonPausesAI": true,
-    "TickLength": 0.5,
+    "TickLength": 0.1,
     "drawSideNumberVertices": 0,
     "drawLeftVertices": false,
     "drawVerticalEdges": false,
     "drawTopCells": false,
     "drawCornerConcaveCells": false,
-    "AI_9": {
-        "AI": {"algorithm": "Alpha-beta AI"},
-        "constructor": "cannon.Main$$Lambda$15/0x0000000800ba4c40@4067c6f"
-    },
-    "drawPhasesCells": false,
-    "AI_7": {
-        "AI": {"algorithm": "Alpha-beta AI"},
-        "constructor": "cannon.Main$$Lambda$15/0x0000000800ba4c40@4067c6f"
-    },
-    "AI_8": {
-        "AI": {"algorithm": "Alpha-beta AI"},
-        "constructor": "cannon.Main$$Lambda$15/0x0000000800ba4c40@4067c6f"
-    }
+    "drawPhasesCells": false
 }
