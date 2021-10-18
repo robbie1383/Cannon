@@ -33,12 +33,25 @@ public class AlphaBetaAI extends AI
 
             )
     {
+        double turn = 0;
         long start = System.currentTimeMillis();
-        Move move = this.NegaMax(game, context, 4, Double.NEGATIVE_INFINITY, Double.POSITIVE_INFINITY, player).getMove();
+        MoveValue move = this.NegaMax(game, context, 2, Double.NEGATIVE_INFINITY, Double.POSITIVE_INFINITY, player);
         long end = System.currentTimeMillis();
-        time -= (end - start);
-        System.out.println("Time left : " + time + " for player "+ this.player);
-        return move;
+        turn += (end - start);
+        int count = 3;
+        while (turn < (maxSeconds*1000 - 2000)) {
+
+            start = System.currentTimeMillis();
+            move = this.NegaMax(game, context, count, Double.NEGATIVE_INFINITY, Double.POSITIVE_INFINITY, player);
+            end = System.currentTimeMillis();
+            turn += (end - start);
+            count++;
+        }
+        time -= turn;
+        System.out.println("Depth "+count);
+        System.out.println("Turn took : "+ (turn/1000) + " secodn. Time left : " + (time/1000) + " seconds for player "+ this.player);
+        System.out.println(("Score :" + move.getScore()));
+        return move.getMove();
     }
 
     @Override
@@ -54,7 +67,7 @@ public class AlphaBetaAI extends AI
         // Lookup transposition table
         double oldAlpha = alpha;
         TranspositionTableEntry entry = this.lookUp(state);
-        if (entry != null && entry.depth <= depth) {
+        if (entry != null && entry.depth >= depth) {
             if (entry.flag.equals("exact")) return new MoveValue(entry.bestMove, entry.value);
             if (entry.flag.equals("upper")) beta = Math.min(beta, entry.value);
             if (entry.flag.equals("lower")) alpha = Math.max(alpha, entry.value);
@@ -65,16 +78,18 @@ public class AlphaBetaAI extends AI
         // Start alpha-beta
         // If leaf node
         if(depth == 0 || !state.active(player) || !state.active(switchPlayer(player))) {
-            double heuristic = (double) (heuristics.computeValue(state, player, Float.valueOf(0.01f)) - heuristics.computeValue(state, this.switchPlayer(player), Float.valueOf(0.01f)));
+            double heuristic = heuristics.computeValue(state, player, Float.valueOf(0.01f)) - heuristics.computeValue(state, this.switchPlayer(player), Float.valueOf(0.01f));
             if (!state.active(switchPlayer(player)) && state.winners().contains(switchPlayer(player)))
                 heuristic -= 10000.f;
-
+            if (!state.active(player) && state.winners().contains(player))
+                heuristic += 10000.f;
             return new MoveValue(null, heuristic);
         }
 
         // If internal node
         double score = Double.NEGATIVE_INFINITY;
-        FastArrayList<Move>  legalMoves = AIUtils.extractMovesForMover(game.moves(state).moves(), player);
+        FastArrayList<Move> legalMoves = AIUtils.extractMovesForMover(game.moves(state).moves(), player);
+        this.order(legalMoves, state, player, game, 0, legalMoves.size()-1);
         Move bestMove = legalMoves.get(0);
 
         for (Move move : legalMoves) {
@@ -121,6 +136,38 @@ public class AlphaBetaAI extends AI
         this.transpositionTable[i] = t;
     }
 
+    private void order(FastArrayList<Move> list, Context state, int player, Game game, int low, int high) {
+
+        // Quicksort on the heuristic values.
+        int i = low, j = high;
+        double pivot = this.getHeuristic(list.get(i + (j-i)/2), state, player, game);
+        while (i <= j) {
+            while (this.getHeuristic(list.get(i), state, player, game)< pivot) {
+                i++;
+            }
+            while (this.getHeuristic(list.get(j), state, player, game) > pivot) {
+                j--;
+            }
+            if (i <= j) {
+                Move aux = list.get(i);
+                list.set(i, list.get(j));
+                list.set(j, aux);
+                i++;
+                j--;
+            }
+        }
+        if (low < j)
+            this.order(list, state, player, game, low, j);
+        if (i < high)
+            this.order(list, state, player, game, i, high);
+
+    }
+
+    private double getHeuristic(Move move, Context state, int player, Game game){
+        Context copyState = copyContext(state);
+        game.apply(copyState, move);
+        return heuristics.computeValue(copyState, player, Float.valueOf(0.01f)) - heuristics.computeValue(copyState, this.switchPlayer(player), Float.valueOf(0.01f));
+    }
     private int switchPlayer(int player) {
         if (player == 1)
             return 2;

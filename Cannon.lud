@@ -119,8 +119,8 @@
         (bestAgent "Alpha-Beta")
         (heuristics {
             (material transformation:(divNumInitPlacement) pieceWeights:{
-                (pair "Town1" 100.0)
-                (pair "Town2" 100.0)
+                (pair "Town1" 200.0)
+                (pair "Town2" 200.0)
                 (pair "Marker1" 10.0)
                 (pair "Marker2" 10.0)
             })
