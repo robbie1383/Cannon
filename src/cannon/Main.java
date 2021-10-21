@@ -18,7 +18,7 @@ public class Main
      */
     public static void main(final String[] args)
     {
-        AIRegistry.registerAI("Alpha-beta AI", () -> {return new AlphaBetaAI();}, (game) -> {return true;});
+        AIRegistry.registerAI("Robbie's AI", () -> {return new AlphaBetaAI();}, (game) -> {return true;});
 
         StartDesktopApp.main(new String[0]);
     }

@@ -1,7 +1,7 @@
 game=C:\Users\Robbie\Desktop\Stuff\UM\Year 1\Intelligent Search and Games\Cannon\Cannon.lud
 START GAME OPTIONS
 END GAME OPTIONS
-RNG internal state=64,103,-120,111,117,-53,37,-96
+RNG internal state=42,-24,-89,98,33,1,70,112
 Move=[Move:mover=0,from=81,to=81,actions=[Add:type=Vertex,to=81,what=2]]
 Move=[Move:mover=0,from=71,to=71,actions=[Add:type=Vertex,to=71,what=2]]
 Move=[Move:mover=0,from=61,to=61,actions=[Add:type=Vertex,to=61,what=2]]
@@ -34,38 +34,6 @@ Move=[Move:mover=0,from=28,to=28,actions=[Add:type=Vertex,to=28,what=1]]
 Move=[Move:mover=0,from=18,to=18,actions=[Add:type=Vertex,to=18,what=1]]
 Move=[Move:mover=0,from=100,to=100,actions=[Add:type=Cell,to=100,what=3]]
 Move=[Move:mover=0,from=101,to=101,actions=[Add:type=Cell,to=101,what=4]]
-Move=[Move:mover=1,from=100,to=7,actions=[Move:typeFrom=Cell,from=100,levelFrom=0,typeTo=Vertex,to=7,decision=true]]
-Move=[Move:mover=2,from=101,to=96,actions=[Move:typeFrom=Cell,from=101,levelFrom=0,typeTo=Vertex,to=96,decision=true]]
-Move=[Move:mover=1,from=18,to=48,actions=[Move:typeFrom=Vertex,from=18,typeTo=Vertex,to=48,decision=true]]
-Move=[Move:mover=2,from=81,to=51,actions=[Move:typeFrom=Vertex,from=81,typeTo=Vertex,to=51,decision=true]]
-Move=[Move:mover=1,from=16,to=46,actions=[Move:typeFrom=Vertex,from=16,typeTo=Vertex,to=46,decision=true]]
-Move=[Move:mover=2,from=51,to=81,actions=[Move:typeFrom=Vertex,from=51,typeTo=Vertex,to=81,decision=true]]
-Move=[Move:mover=1,from=12,to=42,actions=[Move:typeFrom=Vertex,from=12,typeTo=Vertex,to=42,decision=true]]
-Move=[Move:mover=2,from=69,to=99,actions=[Move:typeFrom=Vertex,from=69,typeTo=Vertex,to=99,decision=true]]
-Move=[Move:mover=1,from=10,to=40,actions=[Move:typeFrom=Vertex,from=10,typeTo=Vertex,to=40,decision=true]]
-Move=[Move:mover=2,from=99,to=69,actions=[Move:typeFrom=Vertex,from=99,typeTo=Vertex,to=69,decision=true]]
-Move=[Move:mover=1,from=40,to=50,actions=[Move:typeFrom=Vertex,from=40,typeTo=Vertex,to=50,decision=true]]
-Move=[Move:mover=2,from=61,to=91,actions=[Move:typeFrom=Vertex,from=61,typeTo=Vertex,to=91,decision=true]]
-Move=[Move:mover=1,from=20,to=31,actions=[Move:typeFrom=Vertex,from=20,typeTo=Vertex,to=31,decision=true]]
-Move=[Move:mover=2,from=91,to=82,actions=[Move:typeFrom=Vertex,from=91,typeTo=Vertex,to=82,decision=true]]
-Move=[Move:mover=1,from=42,to=12,actions=[Move:typeFrom=Vertex,from=42,typeTo=Vertex,to=12,decision=true]]
-Move=[Move:mover=2,from=71,to=62,actions=[Move:typeFrom=Vertex,from=71,typeTo=Vertex,to=62,decision=true]]
-Move=[Move:mover=1,from=62,to=62,actions=[Remove:type=Vertex,to=62,decision=true]]
-Move=[Move:mover=2,from=67,to=97,actions=[Move:typeFrom=Vertex,from=67,typeTo=Vertex,to=97,decision=true]]
-Move=[Move:mover=1,from=50,to=61,actions=[Move:typeFrom=Vertex,from=50,typeTo=Vertex,to=61,decision=true]]
-Move=[Move:mover=2,from=97,to=67,actions=[Move:typeFrom=Vertex,from=97,typeTo=Vertex,to=67,decision=true]]
-Move=[Move:mover=1,from=61,to=70,actions=[Move:typeFrom=Vertex,from=61,typeTo=Vertex,to=70,decision=true]]
-Move=[Move:mover=2,from=73,to=64,actions=[Move:typeFrom=Vertex,from=73,typeTo=Vertex,to=64,decision=true]]
-Move=[Move:mover=1,from=70,to=50,actions=[Move:typeFrom=Vertex,from=70,typeTo=Vertex,to=50,decision=true]]
-Move=[Move:mover=2,from=64,to=53,actions=[Move:typeFrom=Vertex,from=64,typeTo=Vertex,to=53,decision=true]]
-Move=[Move:mover=1,from=50,to=61,actions=[Move:typeFrom=Vertex,from=50,typeTo=Vertex,to=61,decision=true]]
-Move=[Move:mover=2,from=69,to=99,actions=[Move:typeFrom=Vertex,from=69,typeTo=Vertex,to=99,decision=true]]
-Move=[Move:mover=1,from=61,to=71,actions=[Move:typeFrom=Vertex,from=61,typeTo=Vertex,to=71,decision=true]]
-Move=[Move:mover=2,from=53,to=43,actions=[Move:typeFrom=Vertex,from=53,typeTo=Vertex,to=43,decision=true]]
-Move=[Move:mover=1,from=71,to=81,actions=[Remove:type=Vertex,to=81],[Move:typeFrom=Vertex,from=71,typeTo=Vertex,to=81,decision=true]]
-Move=[Move:mover=2,from=77,to=66,actions=[Move:typeFrom=Vertex,from=77,typeTo=Vertex,to=66,decision=true]]
-Move=[Move:mover=1,from=66,to=66,actions=[Remove:type=Vertex,to=66,decision=true]]
-Move=[Move:mover=2,from=99,to=88,actions=[Move:typeFrom=Vertex,from=99,typeTo=Vertex,to=88,decision=true]]
 numInitialPlacementMoves=32
 rankings=0.0,0.0,0.0
 SANDBOX=false
