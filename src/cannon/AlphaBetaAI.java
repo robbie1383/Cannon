@@ -83,13 +83,13 @@ public class AlphaBetaAI extends AI
             double heuristic = heuristics.computeValue(state, this.player, Float.valueOf(0.01f)) - heuristics.computeValue(state, this.switchPlayer(this.player), Float.valueOf(0.01f));
             if (state.winners().contains(switchPlayer(this.player))) {
                 heuristic -= 10000.f;
-                heuristic -= this.depth - depth;
-                System.out.println(heuristic);
+                heuristic -= (this.depth - depth)*10;
             }
 
-            if (state.winners().contains(this.player))
+            if (state.winners().contains(this.player)) {
                 heuristic += 10000.f;
-                heuristic -= this.depth - depth;
+                heuristic -= (this.depth - depth) * 10;
+            }
             return new MoveValue(null, heuristic);
         }
 
