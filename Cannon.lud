@@ -62,6 +62,8 @@
 
 (define "DestroyedTownP2" (not (is Within (id "Town" P2) in:(sites Top))) )
 
+(define "NoMorePieces" (= (count Pieces Mover) 1) )
+
 
 // ---------------------------------------------------------------------------------------------------------------------------------
 
@@ -87,8 +89,8 @@
         )
         phases:{
         (phase "TownPlacement"
-            (play (move 
-                    (from (handSite Mover)) 
+            (play (move
+                    (from (handSite Mover))
                     (to (difference (sites Mover) (sites Corners)) if:(is Empty(to)))
                     )
             )
@@ -99,6 +101,7 @@
             (end {
                 (if "DestroyedTownP1" (result P2 Win))
                 (if "DestroyedTownP2" (result P1 Win))
+                (if "NoMorePieces" (result Mover Loss))
             })
         )}
        
