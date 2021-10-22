@@ -36,14 +36,14 @@ public class AlphaBetaAI extends AI
         MoveValue move = this.AlphaBeta(game, context, 4, Double.NEGATIVE_INFINITY, Double.POSITIVE_INFINITY, player, maxSeconds*1000);
         long end = System.currentTimeMillis();
         turn += (end - start);
-        int count = 5;
+        int count = 4;
         while (turn < (maxSeconds*1000 - 2000)) {
-
+            count++;
             start = System.currentTimeMillis();
             move = this.AlphaBeta(game, context, count, Double.NEGATIVE_INFINITY, Double.POSITIVE_INFINITY, player, maxSeconds*1000-turn);
             end = System.currentTimeMillis();
             turn += (end - start);
-            count++;
+
         }
         time -= turn;
         System.out.println("Depth "+count);
@@ -69,7 +69,7 @@ public class AlphaBetaAI extends AI
         double oldAlpha = alpha;
         TranspositionTableEntry entry = this.lookUp(state);
         if (entry != null && entry.depth >= depth) {
-            System.out.println("Used Transposition table.");
+            //System.out.println("Used Transposition table.");
             if (entry.flag.equals("exact")) return new MoveValue(entry.bestMove, entry.value);
             if (entry.flag.equals("upper")) beta = Math.min(beta, entry.value);
             if (entry.flag.equals("lower")) alpha = Math.max(alpha, entry.value);

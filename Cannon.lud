@@ -24,7 +24,7 @@
 )
 
 (define "StepCannon"
-     (move Hop (directions {Backward Forward Leftward Rightward} of:All) 
+     (move Hop (directions All)
             (between (exact 2) if:(is Friend (who at:(between))))
             (to if:(is Empty(to)))
    )
@@ -42,14 +42,14 @@
 )
 
 (define "ShootCannon"
-    (forEach Direction
+    (forEach Direction All
         (if (and ("IsCannon") (is Empty (("AheadSite" steps:3))))
             (if (is Enemy (who at:("AheadSite" steps:4)))
                 (move Remove ("AheadSite" steps:4))
             )
         )
     )
-   (forEach Direction
+   (forEach Direction All
         (if (and ("IsCannon") (is Empty (("AheadSite" steps:4))))
             (if (is Enemy (who at:("AheadSite" steps:5)))
                 (move Remove ("AheadSite" steps:5))
