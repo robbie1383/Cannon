@@ -14,7 +14,7 @@ public class AlphaBetaAI extends AI
     protected int player = -1;
     Heuristics heuristics;
     TranspositionTableEntry[] transpositionTable = new TranspositionTableEntry[1 << 12];
-
+    int depth = 4;
     public AlphaBetaAI()
     {
         this.friendlyName = "Robbie's AI";
@@ -33,22 +33,23 @@ public class AlphaBetaAI extends AI
     {
         double turn = 0;
         long start = System.currentTimeMillis();
-        MoveValue move = this.AlphaBeta(game, context, 4, Double.NEGATIVE_INFINITY, Double.POSITIVE_INFINITY, player, maxSeconds*1000);
+        MoveValue move = this.AlphaBeta(game, context, this.depth, Double.NEGATIVE_INFINITY, Double.POSITIVE_INFINITY, player, maxSeconds*1000);
         long end = System.currentTimeMillis();
         turn += (end - start);
-        int count = 4;
+
         while (turn < (maxSeconds*1000 - 2000)) {
-            count++;
+            this.depth++;
             start = System.currentTimeMillis();
-            move = this.AlphaBeta(game, context, count, Double.NEGATIVE_INFINITY, Double.POSITIVE_INFINITY, player, maxSeconds*1000-turn);
+            move = this.AlphaBeta(game, context, this.depth, Double.NEGATIVE_INFINITY, Double.POSITIVE_INFINITY, player, maxSeconds*1000-turn);
             end = System.currentTimeMillis();
             turn += (end - start);
 
         }
         time -= turn;
-        System.out.println("Depth "+count);
+        System.out.println("Depth "+depth);
         System.out.println("Turn took : "+ (turn/1000) + " seconds. Time left : " + (time/1000) + " seconds for player "+ this.player);
         System.out.println(("Score :" + move.getScore()));
+        this.depth = 4;
         return move.getMove();
     }
 
@@ -82,11 +83,13 @@ public class AlphaBetaAI extends AI
             double heuristic = heuristics.computeValue(state, this.player, Float.valueOf(0.01f)) - heuristics.computeValue(state, this.switchPlayer(this.player), Float.valueOf(0.01f));
             if (state.winners().contains(switchPlayer(this.player))) {
                 heuristic -= 10000.f;
+                heuristic -= this.depth - depth;
                 System.out.println(heuristic);
             }
 
             if (state.winners().contains(this.player))
                 heuristic += 10000.f;
+                heuristic -= this.depth - depth;
             return new MoveValue(null, heuristic);
         }
 
